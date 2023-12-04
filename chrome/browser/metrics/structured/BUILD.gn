@@ -1,0 +1,56 @@
+# Copyright 2021 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//build/config/chrome_build.gni")
+import("//build/config/chromeos/ui_mode.gni")
+
+assert(is_chromeos)
+
+if (is_chromeos_ash) {
+  source_set("structured") {
+    sources = [
+      "ash_event_storage.cc",
+      "ash_event_storage.h",
+      "ash_structured_metrics_recorder.cc",
+      "ash_structured_metrics_recorder.h",
+      "key_data_provider_ash.cc",
+      "key_data_provider_ash.h",
+    ]
+    deps = [
+      "//components/metrics",
+      "//components/metrics/structured",
+      "//components/metrics/structured:external_metrics",
+      "//components/metrics/structured:structured_metrics_validator",
+    ]
+  }
+}
+
+source_set("features") {
+  sources = [
+    "event_logging_features.cc",
+    "event_logging_features.h",
+  ]
+
+  deps = [
+    "//base",
+    "//components/metrics/structured:structured_metrics_features",
+  ]
+}
+
+static_library("test_support") {
+  testonly = true
+  sources = [
+    "test/structured_metrics_mixin.cc",
+    "test/structured_metrics_mixin.h",
+    "test/test_structured_metrics_recorder.cc",
+    "test/test_structured_metrics_recorder.h",
+  ]
+  deps = [
+    "//chrome/test:test_support",
+    "//components/metrics/structured",
+    "//components/metrics/structured:structured_metrics_features",
+    "//components/metrics/structured:test_support",
+    "//components/metrics_services_manager",
+  ]
+}
