@@ -16036,7 +16036,7 @@ Please help our engineers fix this problem. Tell us what happened right before y
       on <ph name="MAIN_FRAME_ETLD_PLUS_ONE">$1<ex>main-frame.example</ex></ph>
     </message>
     <message name="IDS_ACCOUNT_SELECTION_CONTINUE" desc="Title of the button that continues filling with the only available set of credentials.">
-      Continue as <ph name="NAME">$1<ex>Albus (or Albus Dumbledore)</ex></ph>
+      Continue as <ph name="NAME">$1<ex>Albus (or Albus Dumbledore)</ex></ph> (not yet with BISON)
     </message>
     <message name="IDS_ACCOUNT_SELECTION_DATA_SHARING_CONSENT_NO_PP_OR_TOS" desc="The consent text shown to the user before sign up when there is no privacy policy or terms of service.">
       To continue, <ph name="IDENTITY_PROVIDER_ETLD_PLUS_ONE">$1<ex>idp.com</ex></ph> will share your name, email address, and profile picture with this site.
